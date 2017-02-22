@@ -89,19 +89,19 @@ void init_gas_sensor(){
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
     
     // Common ADC Initialization
-    ADC_CommonInitStruct.ADC_Mode = ADC_Mode_Independent;
-    ADC_CommonInitStruct.ADC_Prescaler = ADC_Prescaler_Div8;
+    ADC_CommonInitStruct.ADC_Mode = ADC_Mode_Independent;//ADC works in Independent mode
+    ADC_CommonInitStruct.ADC_Prescaler = ADC_Prescaler_Div8;//Set the prescaler
     ADC_CommonInitStruct.ADC_DMAAccessMode = ADC_DMAAccessMode_Disabled;
     ADC_CommonInitStruct.ADC_TwoSamplingDelay = ADC_TwoSamplingDelay_5Cycles;
     ADC_CommonInit(&ADC_CommonInitStruct);
     
     ADC_InitStruct.ADC_Resolution = ADC_Resolution_12b;
     ADC_InitStruct.ADC_ScanConvMode = DISABLE;
-    ADC_InitStruct.ADC_ContinuousConvMode = ENABLE;
-    ADC_InitStruct.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_None;
+    ADC_InitStruct.ADC_ContinuousConvMode = ENABLE;//ADC Works in continuous mode
+    ADC_InitStruct.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_None;//No trigger
     ADC_InitStruct.ADC_ExternalTrigConv = ADC_ExternalTrigConv_T1_CC1;
     ADC_InitStruct.ADC_DataAlign = ADC_DataAlign_Right;
-    ADC_InitStruct.ADC_NbrOfConversion = 3;
+    ADC_InitStruct.ADC_NbrOfConversion = 3; //Number of convergence
     ADC_Init(ADC1, &ADC_InitStruct);
     
     
@@ -109,14 +109,14 @@ void init_gas_sensor(){
     ADC_Cmd(ADC1, ENABLE);
     
     // ADC Channel 1 Configuration
-    ADC_RegularChannelConfig(ADC1, ADC_Channel_gas, 1, ADC_SampleTime_144Cycles);
+    ADC_RegularChannelConfig(ADC1, ADC_Channel_gas, 1, ADC_SampleTime_144Cycles);//Channel number and configuration
     
     
     
-
+    
 }
 
-//The above code shows the initialization of gas sensor. 
+//The above code shows the initialization of gas sensor.
 
 // get one gas reading (in ppm)
 float read_gas_sensor(){
@@ -143,30 +143,30 @@ void init_temperature23_sensor(){
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
     
     // Common ADC Initialization
-    ADC_CommonInitStruct.ADC_Mode = ADC_Mode_Independent;
-    ADC_CommonInitStruct.ADC_Prescaler = ADC_Prescaler_Div8;
+    ADC_CommonInitStruct.ADC_Mode = ADC_Mode_Independent;//ADC works in Independent mode
+    ADC_CommonInitStruct.ADC_Prescaler = ADC_Prescaler_Div8;//Set the prescaler
     ADC_CommonInitStruct.ADC_DMAAccessMode = ADC_DMAAccessMode_Disabled;
     ADC_CommonInitStruct.ADC_TwoSamplingDelay = ADC_TwoSamplingDelay_5Cycles;
     ADC_CommonInit(&ADC_CommonInitStruct);
     
     ADC_InitStruct.ADC_Resolution = ADC_Resolution_12b;
     ADC_InitStruct.ADC_ScanConvMode = DISABLE;
-    ADC_InitStruct.ADC_ContinuousConvMode = ENABLE;
-    ADC_InitStruct.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_None;
+    ADC_InitStruct.ADC_ContinuousConvMode = ENABLE;//ADC Works in continuous mode
+    ADC_InitStruct.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_None;//No trigger
     ADC_InitStruct.ADC_ExternalTrigConv = ADC_ExternalTrigConv_T1_CC1;
     ADC_InitStruct.ADC_DataAlign = ADC_DataAlign_Right;
-    ADC_InitStruct.ADC_NbrOfConversion = 3;
+    ADC_InitStruct.ADC_NbrOfConversion = 3;//Number of convergence
     ADC_Init(ADC1, &ADC_InitStruct);
     
     
-   
+    
     // Enable ADC
     ADC_Cmd(ADC1, ENABLE);
     
     // ADC Channel 1 Configuration
-    ADC_RegularChannelConfig(ADC1, ADC_Channel_tempSensor23, 2, ADC_SampleTime_144Cycles);
+    ADC_RegularChannelConfig(ADC1, ADC_Channel_tempSensor23, 2, ADC_SampleTime_144Cycles);//Channel number and configuration
     
-   
+    
     
     
 }
@@ -196,19 +196,19 @@ void init_proximity_sensor(){
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
     
     // Common ADC Initialization
-    ADC_CommonInitStruct.ADC_Mode = ADC_Mode_Independent;
-    ADC_CommonInitStruct.ADC_Prescaler = ADC_Prescaler_Div8;
+    ADC_CommonInitStruct.ADC_Mode = ADC_Mode_Independent;//ADC works in Independent mode
+    ADC_CommonInitStruct.ADC_Prescaler = ADC_Prescaler_Div8;//Set the prescaler
     ADC_CommonInitStruct.ADC_DMAAccessMode = ADC_DMAAccessMode_Disabled;
     ADC_CommonInitStruct.ADC_TwoSamplingDelay = ADC_TwoSamplingDelay_5Cycles;
     ADC_CommonInit(&ADC_CommonInitStruct);
     
     ADC_InitStruct.ADC_Resolution = ADC_Resolution_12b;
     ADC_InitStruct.ADC_ScanConvMode = DISABLE;
-    ADC_InitStruct.ADC_ContinuousConvMode = ENABLE;
-    ADC_InitStruct.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_None;
+    ADC_InitStruct.ADC_ContinuousConvMode = ENABLE;//ADC Works in continuous mode
+    ADC_InitStruct.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_None;//No trigger
     ADC_InitStruct.ADC_ExternalTrigConv = ADC_ExternalTrigConv_T1_CC1;
     ADC_InitStruct.ADC_DataAlign = ADC_DataAlign_Right;
-    ADC_InitStruct.ADC_NbrOfConversion = 3;
+    ADC_InitStruct.ADC_NbrOfConversion = 3;//Number of convergence
     ADC_Init(ADC1, &ADC_InitStruct);
     
     
@@ -217,9 +217,9 @@ void init_proximity_sensor(){
     ADC_Cmd(ADC1, ENABLE);
     
     // ADC Channel 1 Configuration
-    ADC_RegularChannelConfig(ADC1, ADC_Channel_proximity, 3, ADC_SampleTime_144Cycles);
+    ADC_RegularChannelConfig(ADC1, ADC_Channel_proximity, 3, ADC_SampleTime_144Cycles);//Channel number and configuration
     
-  
+    
     
     
 }
@@ -249,94 +249,96 @@ void initialise_monitor_handles();
 
 int main(void)
 {
-  // initialize
-  SystemInit();
-  initialise_monitor_handles();
-  init_systick();
-  init_gas_sensor();
-  init_LED_pins();
-  msTicks_var = msTicks;
-                    msTicks_var1 = msTicks;
-                    msTicks_var2 = msTicks;
+    // initialize
+    SystemInit();
+    initialise_monitor_handles();
+    init_systick();
+    init_gas_sensor();
+    init_LED_pins();
+    msTicks_var = msTicks;
+    msTicks_var1 = msTicks;
+    msTicks_var2 = msTicks;
     msTicks_var3 = msTicks;
     msTicks_var4 = msTicks;
     
-	
-	//Similarly we have two more blocks for temperature sensor and proximity sensor with their respective parameters.
+    
+    //Similarly we have two more blocks for temperature sensor and proximity sensor with their respective parameters.
     while (1)
     {
-       msTicks_var = msTicks;
-SystemInit();
-        float gas1 = read_gas_sensor();
-
-SystemInit();
+        msTicks_var = msTicks;
+        SystemInit();
+        float gas1 = read_gas_sensor();// Reads the value from gas sensor ADC channel
         
-        if (gas1 > 0.0350)
+        SystemInit();
+        
+        if (gas1 > 0.0350)//checks with reference value for gas
         {
-
             
-            if(msTicks_var - msTicks_var1>=8000)
+            
+            if(msTicks_var - msTicks_var1>=8000)//checks for initial delay
             {
                 msTicks_var1 = msTicks;
                 msTicks_var2 = 0;
-                GPIOD->BSRRL |= (0x1 << (1*12));
+                GPIOD->BSRRL |= (0x1 << (1*12));//turns on the alarm
                 
-
+                
             }
             
             
         }
-
-              msTicks_var = msTicks;
-          SystemInit();
+        
+        msTicks_var = msTicks;
+        SystemInit();
         
         
-        float temperature1 = read_temperature23_sensor();
+        float temperature1 = read_temperature23_sensor();//Reads the value from temperature sensor ADC channel
 
-          SystemInit();
-        if (temperature1 > 0.2560)
+        
+        SystemInit();
+        if (temperature1 > 0.2560)//checks with reference value for temperature
         {
-
-
             
-            if(msTicks_var - msTicks_var3>=2000)
+            
+            
+            if(msTicks_var - msTicks_var3>=2000)//checks for initial delay
             {
                 msTicks_var3 = msTicks;
                 msTicks_var4 = 0;
                 
                 
-                GPIOD->BSRRL |= (0x1 << (1*13));
-                
-                GPIOD->BSRRL |= (0x1 << (1*14));  
+                GPIOD->BSRRL |= (0x1 << (1*13));//turns on the alarm
+
+                GPIOD->BSRRL |= (0x1 << (1*14));//turns on the alarm
             }
             
             
         }
-       
+        
         msTicks_var5 = msTicks;
         SystemInit();
         
         
-        float distance = read_proximity_sensor();
+        float distance = read_proximity_sensor();//Reads the value from Proximity sensor ADC channel
+
         
         SystemInit();
-        if (distance > 0.3000)
+        if (distance > 0.3000)//checks with reference value for temperature
         {
             
             
             
-            if(msTicks_var - msTicks_var5>=2000)
+            if(msTicks_var - msTicks_var5>=2000)//checks for initial delay
             {
                 msTicks_var5 = msTicks;
                 msTicks_var6 = 0;
                 
                 
-                GPIOD->BSRRL |= (0x1 << (1*15));
+                GPIOD->BSRRL |= (0x1 << (1*15));//turns on the alarm
                 
                 
                 
             }
-              
+            
         }
         
     }
