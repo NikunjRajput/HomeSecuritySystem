@@ -6,6 +6,7 @@ Idea of this project is to develop a system which would alert the user through a
 ##Components :
 1. STM32F4 Discovery Board 
 2. Sensors : 
+
 • Temperature Sensor (MCP9700A-E/TO) for ﬁre detection. (Datasheet — https://www.sparkfun.com/datasheets/DevTools/LilyPad/MCP9700.pdf ) 
 • Gas Sensor (MQ5) for gas detection. (Datasheet — https://www.seeedstudio.com/depot/datasheet/MQ-5.pdf ) 
 • Proximity Sensor (GP2Y0A21YK0F Sharp IR). (Datasheet — http://www.sharpsma.com/Webfm_Send/1208 )
